@@ -7,7 +7,7 @@ export class ProductType {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column()
+    @Column({unique: true})
     description: string;
 
     @CreateDateColumn()
@@ -19,7 +19,7 @@ export class ProductType {
     @DeleteDateColumn()
     deleted_at
 
-    @OneToMany(() => Product, (product) => product.productType)
+    @OneToMany(() => Product, (product) => product.product_type_id)
     product: Product[]
     
 }

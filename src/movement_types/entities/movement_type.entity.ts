@@ -6,7 +6,7 @@ export class MovementType {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column()
+    @Column({ unique: true })
     description: string;
 
     @CreateDateColumn()
@@ -18,6 +18,6 @@ export class MovementType {
     @DeleteDateColumn()
     deleted_at
 
-    @OneToMany(() => Movement, (movement) => movement.movementType)
+    @OneToMany(() => Movement, (movement) => movement.movement_type_id)
     movement: Movement[]
 }

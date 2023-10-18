@@ -14,6 +14,7 @@ export class ProductsService {
 
   }
 
+  //Condicion para que quantity por defecto sea 0
   create(createProductDto: CreateProductDto) {
     if (createProductDto === undefined || createProductDto.quantity === null) {
       createProductDto.quantity = 0;
